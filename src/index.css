@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #080B0F;
+  --bg2: #0D1117;
+  --bg3: #111820;
+  --border: #1C2A3A;
+  --accent: #00FFD1;
+  --accent-dim: rgba(0, 255, 209, 0.12);
+  --accent-glow: rgba(0, 255, 209, 0.25);
+  --text: #E8F4F0;
+  --text2: #7A9BAE;
+  --text3: #3A5568;
+  --red: #FF4D6D;
+  --gold: #C4A450;
+  --purple: #7C6AFF;
+  --font-display: 'Bebas Neue', cursive;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-glow); }
+::selection { background: var(--accent-dim); color: var(--accent); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px var(--accent-glow); }
+  50% { box-shadow: 0 0 24px var(--accent-glow), 0 0 48px rgba(0,255,209,0.1); }
+}
+
+/* ── MOBILE: Navbar ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px !important;
+  }
+  nav > div:nth-child(2) {
+    display: none !important;
+  }
+}
+
+/* ── MOBILE: Hero ── */
+@media (max-width: 768px) {
+  section:first-of-type {
+    padding: 0 20px !important;
+    padding-top: 100px !important;
+  }
+}
+
+/* ── MOBILE: Projects ── */
+@media (max-width: 768px) {
+  #projects {
+    padding: 80px 16px !important;
+  }
+  #projects > div:last-child > div {
+    padding: 24px 20px !important;
+  }
+  #projects > div:last-child > div > div {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ── MOBILE: Skills ── */
+@media (max-width: 768px) {
+  #skills {
+    padding: 80px 16px !important;
+  }
+}
+
+/* ── MOBILE: Footer ── */
+@media (max-width: 768px) {
+  footer {
+    padding: 60px 20px 40px !important;
+  }
+  footer > div > div:nth-child(2) {
+    grid-template-columns: 1fr !important;
+  }
+  footer > div > div:last-child {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+}
