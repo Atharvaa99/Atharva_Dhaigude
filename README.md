@@ -37,7 +37,7 @@ Personal portfolio website built with React + Vite. Terminal-aesthetic, dark the
 ## Run Locally
 
 ```bash
-git clone https://github.com/Atharvaa99/portfolio
+git clone https://github.com/Atharvaa99/Atharva_Dhaigude
 cd portfolio
 npm install
 npm run dev
